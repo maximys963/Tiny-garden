@@ -25,7 +25,7 @@ body{
     margin-bottom: 9%;
 
 }
-.water{
+#water{
     background: url("images/water.png") no-repeat;
     background-size: contain;
     height: 150px;
