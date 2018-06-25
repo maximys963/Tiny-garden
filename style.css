@@ -23,6 +23,7 @@ body{
     height: 100px;
     width: 100px;
     margin-bottom: 9%;
+    z-index: 1;
 
 }
 #water{
@@ -33,6 +34,7 @@ body{
     position: absolute;
     top: 67%;
     left: 30%;
+    z-index: 0;
 }
 .seeds{
     background: url("images/seeds.png") no-repeat;
@@ -42,6 +44,7 @@ body{
     position: absolute;
     top: 84%;
     left: 40%;
+
 }
 #lvl1{
     background: url("images/grow lvl 1.png") no-repeat;
