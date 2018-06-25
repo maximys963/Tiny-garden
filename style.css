@@ -55,6 +55,7 @@ body{
     top: 72%;
     left: 52%;
     display: none;
+    z-index: 20;
 
 
 }
@@ -67,6 +68,7 @@ body{
     top: 69%;
     left: 52%;
     display: none;
+    z-index: 20;
 }
 #lvl3{
     background: url("images/grow lvl 3.png") no-repeat;
@@ -77,6 +79,7 @@ body{
     top: 61%;
     left: 51%;
     display: none;
+    z-index: 20;
 }
 #lvl4{
     background: url("images/grow lvl4.png") no-repeat;
@@ -87,6 +90,7 @@ body{
     top: 53%;
     left: 49.5%;
     display: none;
+    z-index: 20;
 }
 #lvl5{
     background: url("images/grow lvl 5.png") no-repeat;
@@ -97,6 +101,7 @@ body{
     top: 46%;
     left: 49.5%;
     display: none;
+    z-index: 20;
 }
 #lvl6{
     background: url("images/grow lvl 6.png") no-repeat;
@@ -107,6 +112,7 @@ body{
     top: 38.5%;
     left: 48%;
     display: none;
+    z-index: 20;
 }
 #massage{
     width:400px;

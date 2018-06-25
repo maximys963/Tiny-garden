@@ -7,8 +7,47 @@ class Plant {
        this.vase = document.getElementById('vase');
    }
    planting(){
-           console.log("planted");
-           this.planted = true;
+
+           if(this.planted && this.watered){
+               console.log("start");
+               let time1 = 0;
+
+              let timer =  setInterval(function () {
+                   time1++;
+                   console.log(time1);
+                   information.setInformation("Your plant is growing");
+                   let lvl1 = document.getElementById("lvl1");
+                   let lvl2 = document.getElementById("lvl2");
+                   let lvl3 = document.getElementById("lvl3");
+                   let lvl4 = document.getElementById("lvl4");
+                   let lvl5 = document.getElementById("lvl5");
+                   let lvl6 = document.getElementById("lvl6");
+
+                   if(time1 === 5){
+                      lvl1.style.display = 'block';
+                   }else if(time1 === 10){
+                       lvl1.style.display = 'none';
+                       lvl2.style.display = 'block';
+                   }else if(time1 === 15){
+                       lvl2.style.display = 'none';
+                       lvl3.style.display = 'block';
+                   }else if(time1 === 20){
+                       lvl3.style.display = 'none';
+                       lvl4.style.display = 'block';
+                   }else if(time1 === 25){
+                       lvl4.style.display = 'none';
+                       lvl5.style.display = 'block';
+                   }else if(time1 === 30){
+                       lvl5.style.display = 'none';
+                       lvl6.style.display = 'block';
+                       clearInterval(timer);
+
+                   }
+                   return time1
+               }, 1000);
+               console.log(time1);
+           }
+
    }
 }
 let tomato = new Plant("Tomato");
@@ -67,16 +106,31 @@ seeds.seedsImage.onmouseup = () =>{
 
 information.setInformation("plant seeds");
 
-tomato.vase.addEventListener('mousemove', ()=>{
+tomato.vase.addEventListener('mousemove', (e)=>{
     if(seeds.taked){
-        console.log("dropped");
+
         information.setInformation("Seeds was planted")
+        tomato.planted = true;
+
     }
     if(water.taked){
-        console.log("dropped");
+
         information.setInformation("Soil was watered")
+        tomato.watered = true;
+        tomato.vase.onmousemove = null;
+
     }
 });
+
+tomato.vase.addEventListener("click", ()=>{
+    tomato.planting();
+
+});
+
+
+
+
+
 
 
 
