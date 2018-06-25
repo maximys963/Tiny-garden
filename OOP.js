@@ -3,6 +3,7 @@ class Plant {
        this.name = name;
        this.watered = false;
        this.lvl = 0;
+       // this.setWaterPosition = this.setWaterPosition.bind(this)
 
    }
 
@@ -33,15 +34,20 @@ setWaterPosition(e){
     console.log(posY);
     console.log(waterImage.style.left);
     console.log(waterImage.style.top);
-
-
     waterImage.style.left = `${posX - waterImage.offsetWidth/4}px`;
     waterImage.style.top = `${posY  - waterImage.offsetHeight/4}px`;
+    // this.moveWater(e)
+
 }
+
 }
 let water = new Water();
 console.log(water.waterImage);
 console.log(water.getWaterPosition());
 console.log(water.getWaterPosition().left);
 
-water.waterImage.addEventListener('mousedown', water.setWaterPosition);
+ water.waterImage.onmousedown = (e) => water.waterImage.onmousemove = (e) => water.setWaterPosition(e);
+ water.waterImage.onmouseup = () =>{
+     water.waterImage.onmousemove = null;
+};
+
